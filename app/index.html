@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>The Weather</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+
+
+<body>
+
+  <nav>
+    <ul class="nav nav-tabs">
+      <li><a href="#/view1">Main view</a></li>
+      <li><a href="#/view2">Test view</a></li>
+    </ul>
+  </nav>
+
+
+
+
+
+  <section class="container">
+    <div ng-view></div>
+  </section>
+
+
+
+
+
+  <!-- Scripts -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="theWeather/theWeather.module.js"></script>
+  <script src="theWeather/theWeather.service.js"></script>
+  <script src="theWeather/theWeather.controller.js"></script>
+
+</body>
+</html>
