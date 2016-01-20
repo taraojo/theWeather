@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col col-xs-10">
         <h1>
-            {{weather.description}}
+            {{data.weather.description}}
         </h1>
     </div>
     <div class="col col-xs-2">
@@ -24,10 +24,10 @@
 </div>
 <div class="row">
     <div class="col col-md-12">
-        <img src="{{weatherImg}}" class="pull-left">
+        <img src="{{data.weatherImg}}" class="pull-left">
 
-        {{weather.item.condition.date}} <br/>
-        {{weather.item.condition.text}} - {{celsius}}&#8451;
+        {{data.weather.item.condition.date}} <br/>
+        {{data.weather.item.condition.text}} - {{data.celsius}}&#8451;
 
         <br/><br/><br/>
     </div>
@@ -38,17 +38,18 @@
         Forecast for the rest of the week
     </caption>
     <tr>
-        <td ng-repeat="i in weather.item.forecast">
+        <td ng-repeat="i in data.weather.item.forecast">
             <h4>{{i.day}} {{i.date}} </h4>
             {{i.text}} <br>
-            Highs of {{i.high}}&deg;F <br/>
-            Lows of {{i.low}}&deg;F</td>
+            Highs of {{i.high}}&deg;C <br/>
+            Lows of {{i.low}}&deg;C
+        </td>
     </tr>
 </table>
 
 <p>
     For detailed information about the weather go to
-    <a href="{{weather.link}}" target="_blank">Yahoo! Weather</a>.
+    <a href="{{data.weather.link}}" target="_blank">Yahoo! Weather</a>.
 </p>
 
-<p>Last updated - {{created}}</p>
+<p>Last updated - {{data.created}}</p>
