@@ -10,7 +10,8 @@ module.exports = function (config) {
             'app/app.js',
             'app/theWeather/theWeather.module.js',
             'app/view*/**/*.js',
-            'app/theWeather/**/*.js'
+            'app/theWeather/**/*.js',
+            'app/services/**/*.js'
         ],
 
         autoWatch: true,

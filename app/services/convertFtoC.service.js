@@ -6,7 +6,10 @@ angular.module('myApp.theWeather')
 
         return {
             convert: function(fahrenheit){
-                return Math.round((fahrenheit - 32) * 5 / 9);
+                if (fahrenheit || fahrenheit === 0)
+                    return Math.round((fahrenheit - 32) * 5 / 9);
+                else
+                    return undefined;
             }
         };
 

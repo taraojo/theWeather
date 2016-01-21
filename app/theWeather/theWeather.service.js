@@ -2,7 +2,7 @@
 
 angular.module('myApp.theWeather')
 
-    .service('theWeatherService', function( $http, ConvertFtoCService, GetWeatherImg ) {
+    .service('theWeatherService', ['ConvertFtoCService', 'GetWeatherImg', function( $http, ConvertFtoCService, GetWeatherImg ) {
 
         return {
             getWeather: getWeather
@@ -52,4 +52,4 @@ angular.module('myApp.theWeather')
             };
         }
 
-});
+}]);

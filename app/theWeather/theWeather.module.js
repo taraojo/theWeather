@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.theWeather', [])
+angular.module('myApp.theWeather', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/view1', {
