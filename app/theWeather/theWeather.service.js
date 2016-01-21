@@ -2,7 +2,7 @@
 
 angular.module('myApp.theWeather')
 
-    .service('theWeatherService', ['ConvertFtoCService', 'GetWeatherImg', function( $http, ConvertFtoCService, GetWeatherImg ) {
+    .service('theWeatherService', ['$http', 'ConvertFtoCService', 'GetWeatherImg', function( $http, ConvertFtoCService, GetWeatherImg ) {
 
         return {
             getWeather: getWeather
@@ -11,10 +11,7 @@ angular.module('myApp.theWeather')
         function getWeather(){
             var request = $http({
                 method: "get",
-                url:"https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='walsall, uk')&format=json",
-                params: {
-                    action: "get"
-                }
+                url:"https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='walsall, uk')&format=json"
             });
             return ( request.then( handleSuccess, handleError ) );
         }
@@ -35,7 +32,7 @@ angular.module('myApp.theWeather')
                 weatherDesc = weatherResults.item.description,
                 fahrenheit = weatherResults.item.condition.temp;
 
-            console.log(weatherResults);
+            console.log(data);
 
             // convert fahrenheit values in forecast array
             weatherResults.item.forecast.map(function(i){
